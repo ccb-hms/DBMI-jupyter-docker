@@ -18,7 +18,7 @@ RUN python3 -m pip install faiss-cpu
 
 EXPOSE 8787
 
-CMD jupyter-lab /Code/dbmi-demo.ipynb --ip 0.0.0.0 --port 8787 --allow-root
+CMD jupyter-lab ./Code/dbmi-jupyter-workbench.ipynb --ip 0.0.0.0 --port 8787 --allow-root
 
 
 # Docker build command:
@@ -28,5 +28,5 @@ CMD jupyter-lab /Code/dbmi-demo.ipynb --ip 0.0.0.0 --port 8787 --allow-root
 # docker \
 # run \
 # -p 8787:8787 \
-# -v ./:/dbmi-docker/ \
+# -v ./Code/:/dbmi-docker/Code/ \
 # dbmi-jupyter-workbench
