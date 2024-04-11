@@ -1,9 +1,9 @@
 FROM python:3.11.4
 
 # Set the working directory in the container
-RUN mkdir dbmi-docker
+RUN mkdir faiss-cpu-docker-workbench
 
-WORKDIR /dbmi-docker
+WORKDIR /faiss-cpu-docker-workbench
 
 COPY Code/. /Code/.
 COPY Container/. /Container/.
@@ -18,15 +18,15 @@ RUN python3 -m pip install faiss-cpu
 
 EXPOSE 8787
 
-CMD jupyter-lab ./Code/dbmi-jupyter-workbench.ipynb --ip 0.0.0.0 --port 8787 --allow-root
+CMD jupyter-lab ./Code/faiss-cpu-docker-workbench.ipynb --ip 0.0.0.0 --port 8787 --allow-root
 
 
 # Docker build command:
-# docker build . -f Container/Dockerfile -t dbmi-jupyter-workbench
+# docker build . -f Container/Dockerfile -t faiss-cpu-docker-workbench
 
 # Docker run command:
 # docker \
 # run \
 # -p 8787:8787 \
-# -v ./Code/:/dbmi-docker/Code/ \
-# dbmi-jupyter-workbench
+# -v ./Code/:/faiss-cpu-docker-workbench/Code/ \
+# faiss-cpu-docker-workbench
